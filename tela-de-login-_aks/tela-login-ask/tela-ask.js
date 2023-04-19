@@ -30,8 +30,8 @@ const telaAsk = () => {
     <View style={{ color:'white', flex: 1, backgroundColor: '#070730' , padding: ''}}>
     
     <View style={styles.containerImg}> 
-        <ImageBackground source={'../imgProjeto/Asking.svg'} resizeMode="cover" style={styles.image}>
-       <Image source={require('../imgProjeto/branca.svg')}
+        <ImageBackground source={'./tela-de-login-_ask/imgProjeto/Asking.svg'} resizeMode="cover" style={styles.image}>
+       <Image source={require('./tela-de-login-_aks/imgProjeto/branca.svg')}
            style={
              styles.img
            }/>
