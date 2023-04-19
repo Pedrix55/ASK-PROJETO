@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="circle">
+        <div class="slice1"></div>
+        <div class="slice2"></div>
+        <div class="slice3"></div>
+        <div class="slice4"></div>
+      </div>
+</body>
+</html>
+
+-------------------------------------------------
+
+.circle {
+    /* width: 200px;
+    height: 200px; */
+    border-radius: 50%;
+  }
+
+  .circle .slice1 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    background-color: red;
+    transform-origin: 100% 100%;
+    transform: rotate(0deg);
+  }
+  
+  .circle .slice2 {
+    position: absolute;
+    top: 0;
+    right: 50%;
+    width: 50%;
+    height: 50%;
+    background-color: blue;
+    transform-origin: 0 100%;
+    transform: rotate(90deg);
+  }
+  
+  .circle .slice3 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 50%;
+    background-color: green;
+    transform-origin: 0 0;
+    transform: rotate(180deg);
+  }
+  
+  .circle .slice4 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    background-color: yellow;
+    transform-origin: 100% 0;
+    transform: rotate(270deg);
+  }
+  
