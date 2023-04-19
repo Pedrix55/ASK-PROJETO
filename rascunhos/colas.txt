@@ -68,4 +68,139 @@
     transform-origin: 100% 0;
     transform: rotate(270deg);
   }
-  
+   ----------------------------------------------
+
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Document</title>
+</head>
+<body>
+    <div class="pizza">
+        <div class="fatia fatia-1"></div>
+        <div class="fatia fatia-2"></div>
+        <div class="fatia fatia-3"></div>
+        <div class="fatia fatia-4"></div>
+        <div class="fatia fatia-5"></div>
+        <div class="fatia fatia-6"></div>
+        <button id="button" class="qualquer"><span class="icon"></span></button>
+        
+      </div>
+      <script src="script.js"></script>  
+</body>
+</html>
+
+
+.pizza {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #f5deb3;
+  position: relative;
+  overflow: hidden;
+}
+
+.fatia {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 100px 0 0 100px;
+  border-color: transparent transparent transparent #f7dc6f;
+  transform-origin: 0 0;
+}
+
+.fatia-1 {
+  transform: rotate(60deg);
+}
+
+.fatia-2 {
+  transform: rotate(120deg);
+}
+
+.fatia-3 {
+  transform: rotate(180deg);
+}
+
+.fatia-4 {
+  transform: rotate(240deg);
+}
+
+.fatia-5 {
+  transform: rotate(300deg);
+}
+
+.fatia-6 {
+  transform: rotate(360deg);
+}
+
+#button{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #e74c3c;
+  border: none;
+  cursor: pointer;
+}
+
+.qualquer{
+  background: black;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 20px;
+  height: 20px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  padding: 3px;
+}
+
+
+
+
+
+
+
+
+const pizza = document.querySelector('.pizza');
+const btnSpin = document.getElementById('button');
+const fatias = document.querySelectorAll('.fatia');
+const icon = document.querySelector('.icon');
+
+let spinning = false;
+
+console.log(btnSpin);
+
+btnSpin.addEventListener('click', () => {
+  if (!spinning) {
+    console.log('aaaaaaaaa');
+    spinning = true;
+    const randomAngle = Math.floor(Math.random() * 360);
+    const spinAngle = randomAngle + 360 * 5;
+    pizza.style.transform = `rotate(${spinAngle}deg)`;
+    icon.style.display = 'none';
+    setTimeout(() => {
+      const fatiaIndex = Math.floor(randomAngle / 60);
+      const fatia = fatias[fatiaIndex];
+      alert(`Você ganhou a fatia ${fatiaIndex + 1}!`);
+      pizza.style.transform = 'none';
+      icon.style.display = 'block';
+      spinning = false;
+    }, 5000);
+  }
+});
