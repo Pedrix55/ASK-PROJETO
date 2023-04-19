@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ImageBackground, Button, Text, TextInput, StyleSheet, View , Image} from 'react-native';
-import {telaCadastro} from "../tela-inicial/Appinicial.js";
+import {telaCadastro} from "./tela-de-login-_aks/tela-inicial/Appinicial.js";
 
 
 const telaAsk = () => {
